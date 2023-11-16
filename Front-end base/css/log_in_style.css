@@ -1,0 +1,323 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --header-height: 3rem;
+
+    --body-color: #202124;
+    --body-color2: #282824;
+    --body-color3: #EFECE5;
+
+    --z-fixed: 100;
+    --text-color: #FFFFFF;
+
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.9rem;
+
+    --input-color: #9A9999;
+    --button-color: #505050
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: var(--body-color); */
+}
+
+
+
+/* BASE Design */
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+/* ======================HEADER========================== */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--body-color);
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--h3-font-size);
+    font-weight: 500;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 1);
+
+    z-index: var(--z-fixed);
+}
+.nav__container{
+    position: relative;
+    width: 65%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__menu{
+    position: relative;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    column-gap: 3rem;
+}
+.nav__access{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__user{
+    position: relative;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+
+    column-gap: 2rem;
+}
+#sign-up__button{
+    background-color: var(--body-color3);
+    border-radius: 7px;
+    padding: 0.4rem 0.9rem;
+}
+#sign-up__button .nav__link{
+    color: var(--body-color);
+}
+.nav__link{
+    position: relative;
+}
+.nav__link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: 0.4s;
+}
+.nav__link:hover::after{
+    width: 100%;
+}
+#sign-up__button a::after{
+    /* content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1.5px;
+    
+    height: 2px; */
+    background-color: var(--body-color);
+}
+
+#nav-toggle{
+    color: var(--text-color);
+    font-size: var(--h1-font-size);
+    display: none;
+    cursor: pointer;
+}
+.show__menu{
+    right: 0;
+}
+.close__menu{
+    right: 100%;
+
+}  
+
+@media(max-width: 768px){
+    .nav__container{
+        width: 100%;
+        display: block;
+    }
+    .nav__access{
+        margin-left: 2%;
+        margin-right: 2%;
+        height: var(--header-height);
+    }
+    #nav-toggle{
+        display: inline-block;
+    }
+    #sign-up__button{
+        border-radius: 5px;
+        padding: 0.4rem 0.5rem;
+    }
+    .nav__menu{
+        position: absolute;
+        /* display: block; */
+        width: 100%;
+        display: flex;
+        flex-direction:  column;   
+        row-gap: 1rem;
+        /* left: 100%; */
+        background-color: var(--body-color);
+        padding: 0.5rem ;
+        transition: right .4s;
+
+        z-index: var(--z-fixed);
+    }
+    .nav__menu li {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }   
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LO-GIN SECTION */
+.log-in__section{
+    height: 100vh;
+    /* width: 65%; */
+    position: relative;
+    background-color: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-in__buffer{
+    width: 500px;
+    height: 240px;
+    background-color:  var(--body-color3);
+    border-radius: 10px;
+}
+
+.log-in__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    /* row-gap: 3rem; */
+    align-items: center;
+}
+.log-in__container h1{
+    margin-top: 1rem;
+    color: var(--body-color);
+}
+.log-in__holder{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+.log-in__holder input{
+    position: relative;
+    font-size: 1rem;
+    background-color: var(--input-color);
+    height: 1.8rem;
+    /* color: var(--body-color); */
+    border: none;
+    /* border-radius: 5%; */
+    padding-left: 5px;
+    width: 100%;
+    transition: 0.4s;
+    border-radius: 3px;
+    /* color: white; */
+}
+.log-in__holder input::placeholder{
+    color: var(--body-color);
+    opacity: 50%;
+}
+.log-in__holder input:hover{
+    background-color: #747474;
+  
+}
+.log-in__last-section{
+    width: 100%;
+    font-size: 0.7rem;
+    
+}
+.custom__button{
+    position: relative;
+    cursor: pointer;
+    /* position: relative; */
+    width:  100%;
+    height: 1.8rem; 
+    line-height: 1.8rem;
+    font-size: 1rem;
+    background-color: var(--button-color);
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+.custom__button:hover{
+    background-color: var(--body-color);
+    /* color: white; */
+}
+.log-in__pre{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.log-in__pre li span{
+    position: relative;
+    color: #627077;
+}
+.log-in__pre a{
+    position: relative;
+    color: var(--body-color);
+    font-weight: 600;
+}
+.log-in__pre a::after{
+    content: "";
+    position: absolute;
+    left: 0; /* Start the line from the left */
+    bottom: -2px; /* Position it at the bottom */
+    width: 0%; /* Make the line span the width of the parent */
+    height: 1.2px; /* Set the height or thickness of the line */
+    background-color: var(--body-color); /* Choose the color of the line */
+    /* : 2px; */
+    transition: 0.4s;
+}
+.log-in__pre__item:hover a::after{
+    width: 80%;
+}
+
+
