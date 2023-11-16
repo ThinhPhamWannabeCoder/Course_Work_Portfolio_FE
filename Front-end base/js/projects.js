@@ -59,36 +59,123 @@ function handleWindowResize() {
 // Add an event listener for the resize event can sua lai sau
 window.addEventListener('resize', handleWindowResize);
     
+// document.addEventListener('DOMContentLoaded', function() {
+//     fetch('http://localhost:8080/api/project/')
+//         .then(res => {
+//             if(res.ok){
+//                 console.log("SUCCESS");
+//                 console.log(res);
+//                 return res.json();
+//             }else{
+//                 console.log("Not success");
+                
+//             }})
+//         .then(data1 => {
+//             console.log(data1);
+//             return fetch('http://localhost:8080/api/topic/')})
+//         .then(res => {
+//             if(res.ok){
+//                 console.log("SUCCESS");
+//                 console.log(res);
+//                 return res.json();
+//             }else{
+//                 console.log("Not success");
+                
+//             }})
+//         .then(data1 => 
+//             console.log(data1))
+//         .catch(err =>{
+//             console.log("Co loi tai day nay: ", err);
+//         })
+// });
+
+
+// =========================================== Load intro ===========================================
+// Lấy element
+const intro = document.querySelector('.project__intro');
+// const intro_heading = intro.querySelector('h1')
+const intro_quote = intro.querySelector('span i')
+const intro_desc = document.querySelector('.project__intro__desc');
+// intro_quote.innerText = data1.desc
+// Fetch va gan dư liệu
+// Query lay id cua topic type va place
+
+const thisSitePlace = "projects"
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:8080/api/project/')
+    // Fetch lay thong tin topic
+    let placeId = null;
+    fetch(`http://localhost:8080/api/user/introPlace/${thisSitePlace}/`,{
+        method: 'GET',
+        headers:{
+            'Content-Type': 'application/json'
+        },})
         .then(res => {
             if(res.ok){
-                console.log("SUCCESS");
-                console.log(res);
                 return res.json();
-            }else{
-                console.log("Not success");
-                
-            }})
-        .then(data1 => {
-            console.log(data1);
-            return fetch('http://localhost:8080/api/topic/')})
-        .then(res => {
-            if(res.ok){
-                console.log("SUCCESS");
-                console.log(res);
-                return res.json();
-            }else{
-                console.log("Not success");
-                
-            }})
-        .then(data1 => 
-            console.log(data1))
-        .catch(err =>{
-            console.log("Co loi tai day nay: ", err);
+            }
+            else{
+                throw new Error('Failed to fetch IntroPlace');
+            }
         })
-});
-// test
+        .then(data1 =>{
+            placeId = data1.id;
+            // Fetch all intro in project site
+            return fetch(`http://localhost:8080/api/user/intro/place/${placeId}`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+              });
+        })
+        .then(res =>{
+            if(res.ok){
+                return res.json();
+
+            }
+            else{
+                throw new Error('Failed to fetchIntro');
+            }
+        })
+        .then(data1 =>{
+            data1.forEach(item=>{
+                if(item.introTypeDTO.name == "introduction"){
+                    intro_desc.innerText = item.desc;
+                } else if(item.introTypeDTO.name == "quote"){
+                    intro_quote.innerText = item.desc;
+                }
+            })
+
+        })
+        .catch(err => {
+            console.log("Co loi tai qua trinh filter ", err);
+        });
+    })
+
+
+// =========================================== Load Project ===========================================
+// Lấy elemtn
+// header
+// Desc
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
