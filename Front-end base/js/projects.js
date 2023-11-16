@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Co loi tai day nay: ", err);
         })
 });
-// Khi load man hinh
+// test
 
 
 
