@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="/Front-end base/css/style.css">
+    <!-- bundle slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -265,49 +267,72 @@
                     <li><a href="">Data Engineer</a></li>
                 </ul>
             </div>
-            <div class="project__swipe-icon">
-                <i class="ri-arrow-left-s-fill"></i>
-                <i class="ri-arrow-right-s-fill"></i>
-            </div>
             <div class="project__inner-container">
-                <ul class="project__container">
-                    <li class="project__item">
-                        <div class="project-inner">
+                <div class="swiper mySwiper container">
+                    <div class="swiper-wrapper content">
+              
+                      <div class="project__item swiper-slide card">
+                        <div class="project-inner card-content">
                             <div class="project-inner-header">
-                                <h3 class="topic">ETL</h3>
-                                <div class="title">Batch Processing with Hadoop</div>
+                              <h3 class="topic">ETL</h3>
+                              <div class="title">Batch Processing with Hadoop</div>
                             </div>
                             <div class="link_ref"><a href=""><i class="ri-github-fill"></i>Git hub</a></div>
                         </div>
-                    </li>
-                    <li class="project__item">
-                        <div class="project-inner">
+                      </div>
+                      <div class="project__item swiper-slide card">
+                        <div class="project-inner card-content">
                             <div class="project-inner-header">
-                                <h3 class="topic">ETL</h3>
-                                <div class="title">Batch Processing with Hadoop</div>
+                              <h3 class="topic">ETL</h3>
+                              <div class="title">Batch Processing with Hadoop</div>
                             </div>
                             <div class="link_ref"><a href=""><i class="ri-github-fill"></i>Git hub</a></div>
                         </div>
-                    </li>
-                    <li class="project__item">
-                        <div class="project-inner">
+                      </div>
+                      <div class="project__item swiper-slide card">
+                        <div class="project-inner card-content">
                             <div class="project-inner-header">
-                                <h3 class="topic">ETL</h3>
-                                <div class="title">Batch Processing with Hadoop</div>
+                              <h3 class="topic">ETL</h3>
+                              <div class="title">Batch Processing with Hadoop</div>
                             </div>
                             <div class="link_ref"><a href=""><i class="ri-github-fill"></i>Git hub</a></div>
                         </div>
-                    </li>
-                    <li class="project__item">
-                        <div class="project-inner">
+                      </div>
+                      <div class="project__item swiper-slide card">
+                        <div class="project-inner card-content">
                             <div class="project-inner-header">
-                                <h3 class="topic">ETL</h3>
-                                <div class="title">Batch Processing with Hadoop</div>
+                              <h3 class="topic">ETL</h3>
+                              <div class="title">Batch Processing with Hadoop</div>
                             </div>
                             <div class="link_ref"><a href=""><i class="ri-github-fill"></i>Git hub</a></div>
                         </div>
-                    </li>
-                </ul>
+                      </div>
+                      <div class="project__item swiper-slide card">
+                        <div class="project-inner card-content">
+                            <div class="project-inner-header">
+                              <h3 class="topic">ETL</h3>
+                              <div class="title">Batch Processing with Hadoop</div>
+                            </div>
+                            <div class="link_ref"><a href=""><i class="ri-github-fill"></i>Git hub</a></div>
+                        </div>
+                      </div>
+                      <div class="project__item swiper-slide card">
+                        <div class="project-inner card-content">
+                            <div class="project-inner-header">
+                              <h3 class="topic">ETL</h3>
+                              <div class="title">Batch Processing with Hadoop</div>
+                            </div>
+                            <div class="link_ref"><a href=""><i class="ri-github-fill"></i>Git hub</a></div>
+                        </div>
+                      </div>
+                      
+              
+                    </div>
+                  </div>
+              
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
    </section>
@@ -360,6 +385,7 @@
         </div>
     </section>
     <!-- JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/Front-end base/js/main.js"></script>
 </body>
 </html>

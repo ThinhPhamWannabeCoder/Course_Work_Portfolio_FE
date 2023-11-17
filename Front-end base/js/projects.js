@@ -92,10 +92,7 @@ window.addEventListener('resize', handleWindowResize);
 
 // =========================================== Load intro ===========================================
 // Lấy element
-const intro = document.querySelector('.project__intro');
-// const intro_heading = intro.querySelector('h1')
-const intro_quote = intro.querySelector('span i')
-const intro_desc = document.querySelector('.project__intro__desc');
+
 // intro_quote.innerText = data1.desc
 // Fetch va gan dư liệu
 // Query lay id cua topic type va place
@@ -104,6 +101,10 @@ const thisSitePlace = "projects"
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch lay thong tin topic
     let placeId = null;
+    const intro = document.querySelector('.project__intro');
+// const intro_heading = intro.querySelector('h1')
+    const intro_quote = intro.querySelector('span i')
+    const intro_desc = document.querySelector('.project__intro__desc');
     fetch(`http://localhost:8080/api/user/introPlace/${thisSitePlace}/`,{
         method: 'GET',
         headers:{
@@ -150,8 +151,51 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Co loi tai qua trinh filter ", err);
         });
     })
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Tạo holder đẻ gắn
+    // Lay rieng id data va id engineer
+    // Data
+    const webProjectContainer = document.querySelector("#web .mySwiper .swiper-wrapper")
+    const dataProjectContainer = document.querySelector("#data .smySwiper .swiper-wrapper")
+    webProjectContainer.innerHTML = '';
+    dataProjectContainer.innerHTML = '';
+    
+    fetch(`http://localhost:8080/api/user/project/`)
+        .then(res => {
+            if(res.ok){
+                return res.json();
+            }
+            else{
+                throw new Error('Failed to fetch Project');
+            }
+        })
+        .then(projects=>{
+            projects.forEach(data1 =>{
+                const projectItem = document.createElement('div');
+                projectItem.classList.add('project__item', 'swiper-slide', 'card');
+                projectItem.innerHTML=`
+                    <div class="card-content">
+                        <h3>${data1.name}</h3>
+                        <div class="project__description">
+                            <span>${data1.desc}</span>
+                        </div>
+                        <ul class="project__languages">
+                            ${data1.languages.map(language => `<li class="language__item"><i>${language}</i></li>`).join('')}
+                        </ul>
+                        <ul class="project__tools">
+                            ${data1.tools.map(tool => `<li class="tool__item"><i>${tool}</i></li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                if(data1.domainName  == "WEB"){
+                    webProjectContainer.appendChild(projectItem);
+                }
+                else if(data1.domainName == "DE"){
+                    dataProjectContainer.appendChild(projectItem)
+                }
+            })
+        })
+})
 // =========================================== Load Project ===========================================
 // Lấy elemtn
 // header

@@ -617,66 +617,72 @@ a{
 .project__filter li a{
     color: var(--body-color);
 }
-.project__swipe-icon{
-    display: flex;
-    justify-content: flex-end;
-    /* gap: 0.2rem; */
-}
-.project__swipe-icon i{
-    font-size: 3rem;
-    color: lightslategray;
-}
 .project__inner-container{
-    overflow: hidden;
-
-}
-.project__container{
     position: relative;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    gap: 3px;
-    left: 300px;
+    width: 100%;
+}
+.swiper{
+    width: 90%;
 }
 .project__item{
-    /* height: 200px;
-    width: 120px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--body-color);
-    margin: 5px;
-    transition: 0.3s;
+  position: relative;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-color);
+  margin: 5px;
+  transition: 0.3s;
 }
 .project__item:hover{
-    background-color: var(--body-color2);
+  background-color: var(--body-color2);
 }
 .project-inner{
-    margin: 2rem;
-    height: 270px;
-    width: 180px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    
+  margin: 2rem;
+  height: 270px;
+  width: 180px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  
 }
 .project-inner .title{
-    color: var(--text-color);
-    font-size: 0.8rem;
-    font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 .project-inner-header{
 
 }
 /* .link_ref{
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 } */
 .link_ref a i{
-    color: var(--text-color);
-    font-size: var(--h2-font-size);
+  color: var(--text-color);
+  font-size: var(--h2-font-size);
 }
 
-
+.project__inner-container .swiper-pagination{
+    position: absolute;
+    bottom: 50%;
+    
+  }
+  
+.project__inner-container .swiper-pagination-bullet{
+    height: 7px;
+    width: 26px;
+    border-radius: 25px;
+    background: #cd9393;
+}
+.project__inner-container .swiper-button-next, .project__inner-container .swiper-button-prev{
+    opacity: 0.7;
+    color: #dbaeae;
+    transition: all 0.3s ease;
+}
+.project__inner-container .swiper-button-next:hover, .project__inner-container .swiper-button-prev:hover{
+    opacity: 1;
+    color: #cd9393;
+ }
 
 
 
