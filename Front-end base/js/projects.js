@@ -148,9 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         })
         .catch(err => {
-            console.log("Co loi tai qua trinh filter ", err);
+            console.log("Co loi tai qua trinh lay project ", err);
         });
     })
+// FETCH THONG TIN PROJECT
 document.addEventListener('DOMContentLoaded', function() {
     // Tạo holder đẻ gắn
     // Lay rieng id data va id engineer
@@ -194,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataProjectContainer.appendChild(projectItem)
                 }
             })
+            initSwiper();
         })
 })
 // =========================================== Load Project ===========================================
@@ -232,35 +234,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Lam slider
-var swiper1 = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    speed: 700,
-    pagination: {
-      el: ".pagi1",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".next1",
-      prevEl: ".prev1",
-    },
-  });
-var swiper2 = new Swiper(".smySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  slidesPerGroup: 3,
-  loop: true,
-  loopFillGroupWithBlank: true,
-  speed: 700,
-  pagination: {
-    el: ".pagi2",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".next2",
-    prevEl: ".prev2",
-  },
-});
+function initSwiper() {
+    var swiper1 = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        speed: 700,
+        pagination: {
+          el: ".pagi1",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".next1",
+          prevEl: ".prev1",
+        },
+      });
+    var swiper2 = new Swiper(".smySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      speed: 700,
+      pagination: {
+        el: ".pagi2",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".next2",
+        prevEl: ".prev2",
+      },
+    });    
+  }

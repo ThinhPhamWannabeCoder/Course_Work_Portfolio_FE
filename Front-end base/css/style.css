@@ -231,8 +231,8 @@ a{
     justify-content: center;
     align-items: center; 
 }
-.short__info{
-    color: var(--text-color);
+.avatar__container span{
+    width: 600px;
 }
 /* About me */
     /* Quote */
@@ -246,7 +246,7 @@ a{
 }
 
 .about__quote{
-    width: 65%;
+    width: 600px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -255,7 +255,7 @@ a{
 }
 .about__quote span{
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 2rem;
 }
 
     /* Cotent */
@@ -401,6 +401,12 @@ a{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+.skill__intro__quote span{
+    color: var(--text-color);
+    font-size: 2rem;
+    text-align: center;
+    /* font-weight: bold; */
 }
 .skill__master-container{
     height: 100vh;
@@ -548,7 +554,7 @@ a{
 }
 .project__intro__quote span{
     color: var(--text-color);
-    font-size: 3rem;
+    font-size: 2rem;
     /* font-weight: bold; */
 }
 .project__master-container{

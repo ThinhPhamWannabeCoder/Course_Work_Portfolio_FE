@@ -123,15 +123,15 @@ document.addEventListener('DOMContentLoaded', function(){
     // Xac dinh elemtn cha de append vao
     const webSkillsHolder = document.querySelector('#web .mySwiper .swiper-wrapper');
     const dataSkillsHolder = document.querySelector('#data .mySwiper .swiper-wrapper');
-    webSkillsHolder.innerHTML= '';
-    dataSkillsHolder.innerHTML= '';
+    // webSkillsHolder.innerHTML= '';
+    // dataSkillsHolder.innerHTML= '';
     fetch(`http://localhost:8080/api/user/skill/`)
         .then(res =>{
             if(res.ok){
                 return res.json();
             }
             else{
-                throw new Error('Failed to fetch =Skill');
+                throw new Error('Failed to fetch Skill');
             }
         })
         .then(skills =>{
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 const skillItem = document.createElement('div');
                 skillItem.classList.add('skill_item', 'swiper-slide', 'card');
                 skillItem.innerHTML=`
-                div class="card-content">
+                <div class="card-content">
                     <h3 class="skill__name">${item.name}</h3>
                     <div class="skill_item_desc">
                         <div>
@@ -149,32 +149,38 @@ document.addEventListener('DOMContentLoaded', function(){
                         </div>
                     </div>
                 </div>
-                `
+                `      
                 // Cu add vao binh thuong
-                if(name in item.domainName){
-                    webSkillsHolder.appendChild(skillItem);
-                }
-                else if(){
-                    dataSkillsHolder.appendChild(skillItem)
+                for(const dname of item.domainName){
+                    
+                    if(dname == "WEB"){
+                        webSkillsHolder.appendChild(skillItem);
+                    }
+                    if(dname == "DE"){
+                        dataSkillsHolder.appendChild(skillItem);
+                    }
                 }
             })
+            initSwiper();
         })
 })
 
 // PROJECT VIEW
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    slidesPerGroup: 4,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    speed: 700,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+function initSwiper() {
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        speed: 700,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+  }
