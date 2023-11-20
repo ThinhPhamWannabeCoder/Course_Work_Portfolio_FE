@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing:  border-box;
-}
+} 
 :root{
     --header-height: 4.5rem;
     
@@ -45,8 +45,8 @@ ul{
     list-style: none;
 }
 a{
-    text-decoration: none;
-    color: var(--text-color);
+    text-decoration: none; 
+    color: var(--text-color); 
 }
 /* @media screen and (min-width:1150px){
     :root{
@@ -59,6 +59,9 @@ a{
         --smaller-font-size:.813rem;
     }
 } */
+th {
+    white-space: nowrap;
+  }
 
 /* ======================HEADER========================== */
 .header{
@@ -125,6 +128,8 @@ a{
 }
 .nav__link{
     position: relative;
+    text-decoration: none; 
+    color: var(--text-color); 
 }
 .nav__link::after{
     content: "";
@@ -216,13 +221,16 @@ a{
 .nav__panel{
     background-color: var(--sub-nav-color);
     width: 200px;
+    
 }
 .nav__panel__holder{
-    padding-top: var(--header-height);
     position: relative;
     display: flex;
     flex-flow: column nowrap;
     gap: 3rem;
+    padding: var(--header-height) 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 .nav__panel__item{
     display: flex;
@@ -265,7 +273,7 @@ a{
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    padding-left: 2rem;
+    padding: 0 2rem 0 2rem;
     gap: 2rem;
     height: 100%;
     width: 100%;
@@ -284,6 +292,9 @@ a{
     flex-flow: row nowrap;
     gap: 2rem;
     height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 .sub__nav__item{
     display: flex;
@@ -328,13 +339,14 @@ a{
     justify-content: center;
     align-items: center;
     height: 500px;
-    font-size: var(--h2-font-size)
+    font-size: var(--h2-font-size);
+    color: var(--text-color);
 }
 .guide b{
     color: #d84d4d;
 }
 /* CONTROL BUTTON COLOR */
-#button{
+#button, .update__button, .delete__button{
     background-color: var(--red-button-color);
     /* border: none; */
     width: 80px;
@@ -346,15 +358,42 @@ a{
     font-weight: bold;
     
 }
-#button:hover{
+#button:hover, .update__button:hover, .delete__button:hover{
     background-color: var(--red-button-color-hover);
     cursor: pointer;
     color: var(--text-color); 
     /* transition-duration: 0.4s; */
 }
-#button:active{
+#button:active, .update__button:active, .delete__button:active{
     background-color: var(--red-button-color-focus);
     transition: none;
+}
+.data__view h2{
+    color: var(--text-color)    ;
+}
+.table__container{
+    max-height: 700px; /* Adjust the height based on your requirements */
+    overflow-y: auto;
+}
+/* Xử lý chung tất cả các form */
+.form{
+    z-index: 5;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.form .container{
+    background-color: var(--body-color3);
+    padding: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.form div form{
+    
 }
 
 

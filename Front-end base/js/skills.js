@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // const intro_heading = intro.querySelector('h1')
     const intro_quote = intro.querySelector('span i')
     const intro_desc = document.querySelector('.skills__intro__desc');
-    fetch(`http://localhost:8080/api/user/introPlace/${thisSitePlace}/`,{
+    fetch(`http://localhost:8080/api/user/introPlace/name/${thisSitePlace}`,{
         method: 'GET',
         headers:{
             'Content-Type': 'application/json'
@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data1 =>{
             placeId = data1.id;
+            
             // Fetch all intro in project site
             return fetch(`http://localhost:8080/api/user/intro/place/${placeId}`, {
                 method: 'GET',
@@ -123,8 +124,10 @@ document.addEventListener('DOMContentLoaded', function(){
     // Xac dinh elemtn cha de append vao
     const webSkillsHolder = document.querySelector('#web .mySwiper .swiper-wrapper');
     const dataSkillsHolder = document.querySelector('#data .mySwiper .swiper-wrapper');
-    // webSkillsHolder.innerHTML= '';
-    // dataSkillsHolder.innerHTML= '';
+    const webIntroHolder = document.querySelector('#web .skills_desc');
+    const dataIntroHolder = document.querySelector('#data .skills_desc');
+    webSkillsHolder.innerHTML= '';
+    dataSkillsHolder.innerHTML= '';
     fetch(`http://localhost:8080/api/user/skill/`)
         .then(res =>{
             if(res.ok){
@@ -162,6 +165,38 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             })
             initSwiper();
+            return fetch(`http://localhost:8080/api/user/domain/`)
+        })
+        .then(res =>{
+            if(res.ok){
+                return res.json();
+            }
+            else{
+                throw new Error('Failed to fetch Skill');
+            }
+        })
+        .then(domains=>{
+            domains.forEach(domain =>{
+                // console.log(domain)  
+                if(domain.name == "WEB"){
+                    webIntroHolder.innerHTML = `
+                        <div>
+                            <span>
+                                ${domain.desc}
+                            </span>
+                        </div>
+                    `
+                }
+                if(domain.name == "DE"){
+                    dataIntroHolder.innerHTML = `
+                    <div>
+                        <span>
+                            ${domain.desc}
+                        </span>
+                    </div>
+                `;
+                }
+            })
         })
 })
 

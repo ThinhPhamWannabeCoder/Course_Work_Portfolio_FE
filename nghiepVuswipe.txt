@@ -1,9 +1,0 @@
-Minh muon noa
-- Moi lần ấn thì chuyển sang phải thêm 1 tab
-- Đi khoảng 3 cái 
-- để 1 tab - see more -----------------------------------------> Đi luôn vào site projects của mình
-
-tại đây nếu như swipe thì mỗi lần ấn thêm 1 nghiệp vụ: call api và add thêm 1 tab nữa đằng sau ngồi chờ đến lượt được gọi
-
-Filter thì sẽ load lại phần đó luon -> Js xử lý 
-- Thymerleaf và thực thiện forEach thôi -. basic

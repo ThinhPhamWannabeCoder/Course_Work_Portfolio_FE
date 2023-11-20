@@ -4,22 +4,27 @@
     box-sizing: border-box;
 }
 :root{
-    --header-height: 3rem;
-
+    --header-height: 4.5rem;
+    
     --body-color: #202124;
     --body-color2: #282824;
     --body-color3: #EFECE5;
-
+    
+    --sub-nav-color: #D9D9D9;
     --z-fixed: 100;
     --text-color: #FFFFFF;
 
-    --h1-font-size: 1.75rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: 0.9rem;
+    --h1-font-size: 2.7rem;
+    --h2-font-size: 1.9rem;
+    --h3-font-size: 1.7rem;
+
+    --normal-font-size: 1.35rem;
 
     --input-color: #9A9999;
-    --button-color: #505050
+    --button-color: #505050;
+    --red-button-color: #cd9393;
+    --red-button-color-hover: #fc5e5e;
+    --red-button-color-focus: #d84d4d;
 }
 
 html{

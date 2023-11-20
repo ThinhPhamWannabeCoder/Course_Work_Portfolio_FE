@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // const intro_heading = intro.querySelector('h1')
     const intro_quote = intro.querySelector('span i')
     const intro_desc = document.querySelector('.project__intro__desc');
-    fetch(`http://localhost:8080/api/user/introPlace/${thisSitePlace}/`,{
+    fetch(`http://localhost:8080/api/user/introPlace/name/${thisSitePlace}`,{
         method: 'GET',
         headers:{
             'Content-Type': 'application/json'

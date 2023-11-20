@@ -8,23 +8,27 @@
     box-sizing:  border-box;
 }
 :root{
-    --header-height: 3rem;
+    --header-height: 4.5rem;
     
     --body-color: #202124;
     --body-color2: #282824;
     --body-color3: #EFECE5;
-
+    
+    --sub-nav-color: #D9D9D9;
     --z-fixed: 100;
     --text-color: #FFFFFF;
 
-    --h1-font-size: 1.75rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
+    --h1-font-size: 2.7rem;
+    --h2-font-size: 1.9rem;
+    --h3-font-size: 1.7rem;
 
-    --normal-font-size: 0.9rem;
+    --normal-font-size: 1.35rem;
 
     --input-color: #9A9999;
     --button-color: #505050;
+    --red-button-color: #cd9393;
+    --red-button-color-hover: #fc5e5e;
+    --red-button-color-focus: #d84d4d;
 }
 html{
     scroll-behavior: smooth;
@@ -232,7 +236,7 @@ a{
     align-items: center; 
 }
 .avatar__container span{
-    width: 600px;
+    width: 900px;
 }
 /* About me */
     /* Quote */
@@ -246,7 +250,7 @@ a{
 }
 
 .about__quote{
-    width: 600px;
+    width: 800px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -278,7 +282,7 @@ a{
     justify-content: space-between;
 }
 .about__header{
-    font-size: 3rem;
+    font-size: 4rem ;
     text-align: center;
     width: 100%;
     margin-top: var(--header-height);
@@ -423,14 +427,14 @@ a{
     align-items: flex-end;
 }
 .skill__header-header{
-    width: 400px;
+    width: 600px;
 }
 .skill__header-header h1{
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 .skill__header-header span{
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .skill__filter{
     display: flex;
@@ -477,14 +481,15 @@ a{
 }
 .skill__item div{
     position: relative;
-    width: 180px;
-    height: 80px;
+    width: 270px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: var(--h2-font-size);
 }
 .odd{
-    left: 90px
+    left: 135px
 }
 /* INFINITE SCROLL */
 .scroller[data-animated="true"] {
@@ -578,7 +583,7 @@ a{
 .project__header-header{
     display: flex;
     flex-flow: column;
-    width: 500px;
+    width: 750px;
 }
 .project__header-header .first{
     display: flex;
@@ -591,7 +596,7 @@ a{
 }
 .project__header h1{
     width: 70%;
-    font-size: 4rem;
+    font-size: 6rem;
     color: var(--body-color);
 }
 .project__filter{
@@ -633,7 +638,7 @@ a{
 .project__item{
   position: relative;
   display: flex;
-  height: 400px;
+  /* height: 600px; */
   justify-content: center;
   align-items: center;
   background-color: var(--body-color);
@@ -645,7 +650,7 @@ a{
 }
 .project-inner{
   margin: 2rem;
-  height: 270px;
+  height: 405px;
   width: 180px;
   display: flex;
   flex-flow: column nowrap;

@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // Project quote
     const  projectQuote = document.querySelector('.project__intro__quote span')
 
-    fetch(`http://localhost:8080/api/user/introPlace/${thisSitePlace}/`,{
+    fetch(`http://localhost:8080/api/user/introPlace/name/${thisSitePlace}`,{
         method: 'GET',
         headers:{
             'Content-Type': 'application/json'
@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         .then(intros => {
             intros.forEach(intro =>{
+                
                 if(intro.introTopicDTO.name == 'home'){
                     if(intro.introTypeDTO.name == 'quote'){
                         homeQuote.innerText = intro.desc;
@@ -180,9 +181,10 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener('DOMContentLoaded', function(){
     // Lay thong tin se append child vao
     const aboutHolder = document.querySelector('.about__container');
-    const awardHolder = document.querySelector('.award__list')
     // aboutHolder.innerHTML=''
-    // awardHolder.innerHTML=''
+    const awardHolder = document.querySelector('.award__list')
+    aboutHolder.innerHTML=''
+    awardHolder.innerHTML=''
     fetch(`http://localhost:8080/api/user/about/`,{
         method: 'GET',
         headers: {
@@ -199,19 +201,24 @@ document.addEventListener('DOMContentLoaded', function(){
         .then(abouts=>{
             abouts.forEach(about=>{
                 if(about.type == 'about'){
-                    const aboutItem = document.createElement('div');
-                    aboutItem.classList.add('item__header');
-                    aboutItem.innerHTML = `
-                    <div class="circle__holder">
-                        <div class="circle small"></div>
-                    </div>
-                    <ul class="item__short">
-                        <li class="tag title">${about.header}</li>
-                        <li class="tag">${about.tag_1}</li>
-                        <li class="tag">${about.tag_2}</li>
-                    </ul>
+                    
+                    aboutHolder.innerHTML += `
+                    <li class="about__item">
+                        <div class="item__header">
+                            <div class="circle__holder">
+                                <div class="circle small"></div>
+                            </div>
+                            <ul class="item__short">
+                            <li class="tag title">${about.header}</li>
+                            <li class="tag">${about.tag_1}</li>
+                            <li class="tag">${about.tag_2}</li>
+                            </ul>
+                        </div>
+                        <div class="item__desc">
+                            <span>${about.desc}</span>
+                        </div>
+                    </li>
                     `;
-                    aboutHolder.appendChild(aboutItem); 
                 }
                 else if(about.type == 'award'){
                     const awardItem = document.createElement('li');
