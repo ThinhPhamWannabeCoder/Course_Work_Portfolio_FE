@@ -1,42 +1,46 @@
+/* VARIABLES */
+
+
+/* BASE */
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing:  border-box;
 }
 :root{
-    --header-height: 3rem;
-
+    --header-height: 4.5rem;
+    
     --body-color: #202124;
     --body-color2: #282824;
     --body-color3: #EFECE5;
-
+    
+    --sub-nav-color: #D9D9D9;
     --z-fixed: 100;
     --text-color: #FFFFFF;
 
-    --h1-font-size: 1.75rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: 0.9rem;
+    --h1-font-size: 2.7rem;
+    --h2-font-size: 1.9rem;
+    --h3-font-size: 1.7rem;
+
+    --normal-font-size: 1.35rem;
 
     --input-color: #9A9999;
     --button-color: #505050;
     --red-button-color: #cd9393;
     --red-button-color-hover: #fc5e5e;
+    --red-button-color-focus: #d84d4d;
 }
-
 html{
     scroll-behavior: smooth;
+    
 }
 
 body{
     color: var(--text-color);
     font-family: 'Montserrat', sans-serif;
-    /* background-color: var(--body-color); */
+    font-size: var(--normal-font-size);
 }
-
-
-
-/* BASE Design */
+/* BASE design */
 ul{
     list-style: none;
 }
@@ -44,7 +48,17 @@ a{
     text-decoration: none;
     color: var(--text-color);
 }
-
+/* @media screen and (min-width:1150px){
+    :root{
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size:.813rem;
+    }
+} */
 
 /* ======================HEADER========================== */
 .header{
@@ -99,7 +113,6 @@ a{
     flex-flow: row nowrap;
     justify-content: end;
     align-items: center;
-
     column-gap: 2rem;
 }
 #sign-up__button{
@@ -189,255 +202,182 @@ a{
 
 
 }
-
-/* Skills intro */
-.skills__intro{
-    position: relative;
+/* ======================== ADMIN ========================= */
+#admin{
     height: 100vh;
-    width: 100%;
-    /* display: block; */
-
-    background-color: var(--body-color);
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;  
-    align-items: center;
-
-
-}
-.skills__intro h1{
-    margin-top: 6rem;
-    font-size: 4rem;
-    text-align: center;
-}
-
-.skills__intro div{
-    width: 60%;
-    height: 15rem;
-    
-    background-color: var(--body-color3);
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-
-    overflow: hidden;
-}
-.skills__intro div span{
-    margin: 15px;
-    color: var(--body-color);
-    font-weight: 550;
-    text-align: justify;
-}
-/* Skills master container */
-/* Web */
-.skills__master-container{
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    background-color: var(--body-color3);
-    color: var(--body-color);
-}
-.skills__inner-container{
-    position: relative;
-    width: 65%;
-    
-    display: flex;
-    flex-flow: column nowrap;
-    
-}
-.web-skills__container, .data-skills__container{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    /* background-color: var(--body-color3); */
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    /* align-items: center; */
-    
-}
-.skills__header{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 1rem 0 1rem 0;
-    margin-top: var(--header-height);
-}
-.skills__header::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 5px;
-    background-color: var(--body-color);
-    border-radius: 5px;
-}
-.skills__header_overview{
-    position: relative;
-    display: flex;
-    flex: row nowrap;
-    /* justify-content: flex-start; */
-    gap: 2rem ;
-}
-.skills__header_overview ul{
+    padding-top: var(--header-height);
     position: relative;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
-    gap: 5px;
-    
-}
-.skills__header_overview ul li{
-    position: relative;
-    background-color: #cd9393;
-    border-radius: 5px;
-    padding: 3px 5px;
-    display: flex;
-    align-items: center;
-    transition: 0.4s;
-}
-.skills__header_overview ul li:hover{
-    background-color: #fc5e5e;
-}
-.skills_desc{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    background-color: lightgrey;
-    border-radius: 5px;
-}
-.skills_desc div{
-    /* display: block; */
-    /* width: 90%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-/* Skills container */
+    background-color: var(--body-color);
 
-
-
-.swiper{
-    width: 100%;
-  }
-  
-  .card{
+}
+/* ========= Design nav__panel */
+.nav__panel{
+    background-color: var(--sub-nav-color);
+    width: 200px;
+}
+.nav__panel__holder{
+    padding-top: var(--header-height);
     position: relative;
-    background: #fff;
-    border-radius: 4px;
-    /* height: 250px; */
-    margin: 20px 0;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    background-color: #EFECE5;
-    color: #202124;
-  }
-  .card-content{
-    /* width: 150px; */
-    /* height: 200px; */
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: lightgray;
-  }
-  .skill__name{
-    margin-top: 7px;
-    position: relative;
-    
-  }
-  .skill__name::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    height: 2px;
-    background-color: #202124;
-    border-radius: 5px;
-    width: 100%;
-  }
-  .skill_item_desc{
-    position: relative;
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-    background-color: #282824;
-    color: white;
+    gap: 3rem;
+}
+.nav__panel__item{
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+.nav__panel__item div{
+    display: flex;
     align-items: center;
-  }
-  .skill_item_desc div{
-    padding: 6px;
-    font-size: 0.8rem;
-  }
-  
-  .mySwiper .swiper-pagination{
-    position: absolute;
-    bottom: 50%;
-    
-  }
-  
-  .mySwiper .swiper-pagination-bullet{
-    height: 7px;
-    width: 26px;
-    border-radius: 25px;
-    background: #cd9393;
-  }
-  .mySwiper .swiper-button-next, .mySwiper .swiper-button-prev{
-    opacity: 0.7;
-    color: #dbaeae;
-    transition: all 0.3s ease;
-  }
-  .mySwiper .swiper-button-next:hover, .mySwiper .swiper-button-prev:hover{
-    opacity: 1;
-    color: #cd9393;
-  }
-
-
-
-
-
-.project__refered{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-.project__refered__holder{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-.project__refered__holder div{
+    justify-content: center;
     background-color: var(--red-button-color);
+    width: 80%;
+    height: 70px;
     border-radius: 5px;
-    padding: 5px 12px;
-    margin-bottom: 1rem;
-    cursor: pointer;
+    border-color: gray black black gray ;
+    border-width: 3px;
+    border-style: solid;
+    font-size: var(--h3-font-size);
+    color: var(--body-color2);
+    font-weight: 600;
     transition: 0.4s;
-}
-.project__refered__holder div:hover{
-    background-color: var(--red-button-color-hover);
     
 }
-.project__refered__holder div:focus{
-    background-color: #aa2c2c;
+.nav__panel__item div:hover{
+    background-color: var(--red-button-color-hover);
+    cursor: pointer;
+    color: var(--text-color);
+
 }
+.nav__panel__item div:active{
+    background-color: var(--red-button-color-focus);
+    border-color: black gray  gray black  ;
+    border-width: 3px;
+    transition: 0.05s;
+}
+/* EVENT LISTENER ON NAV */
+
+/* ================FORM CONTROL=============== */
+.form__control{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 2rem;
+    gap: 2rem;
+    height: 100%;
+    width: 100%;
+}
+/* Sub_nav */
+.sub__nav{
+    height: var(--header-height);
+    padding-top: 10px;   
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.sub__nav__holder{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+    height: 100%;
+}
+.sub__nav__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub__nav__item div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red-button-color);
+    padding: 10px;
+    border-radius: 5px;
+    border-color: gray black black gray ;
+    border-width: 2px;
+    border-style: solid;
+    font-size: var(--h3-font-size);
+    color: var(--body-color2);
+    font-weight: 600;
+    transition: 0.4s;
+}
+.sub__nav__item div:hover{
+    background-color: var(--red-button-color-hover);
+    cursor: pointer;
+    color: var(--text-color);
+}
+.sub__nav__item div:active{
+    background-color: var(--red-button-color-focus);
+    border-color: black gray gray black  ;
+    border-width: 2px;
+    transition: 0.05s;
+}
+
+.control__view{
+    height: 100vh;
+    width: 100%;
+}
+/* Guide */
+.guide{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: var(--h2-font-size)
+}
+.guide b{
+    color: #d84d4d;
+}
+/* CONTROL BUTTON COLOR */
+#button{
+    background-color: var(--red-button-color);
+    /* border: none; */
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
+    transition: 0.4s;
+    font-size: smaller;
+    color: var(--body-color2);
+    font-weight: bold;
+    
+}
+#button:hover{
+    background-color: var(--red-button-color-hover);
+    cursor: pointer;
+    color: var(--text-color); 
+    /* transition-duration: 0.4s; */
+}
+#button:active{
+    background-color: var(--red-button-color-focus);
+    transition: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -552,8 +492,4 @@ form button:hover{
 .copy__right span b{
     color: #fc5e5e  ;
 }
-
-
-
-
-
+    
