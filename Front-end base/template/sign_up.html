@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Front-end base/css/sign_up_style.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+    <!-- <link rel="icon" type="image/x-icon" href="/images/thinh_selfie.jpg"> -->
+    <title>Pham Tien Thinh's Portfolio</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav__container">
+
+            <div class="nav__access" id="nav-access">
+                <i class="ri-menu-line" id ="nav-toggle" ></i>
+                <ul class="nav__user">
+                    <li class="nav__item" id="login">
+                        <a href="/Front-end base/template/log_in.html" class="nav__link">Login</a>
+                    </li>
+                    <li class="nav__item" id="sign-up">
+                        <div id="sign-up__button">
+                            <a href="/Front-end base/template/sign_up.html" class="nav__link" >Sign-up</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="nav__menu show__menu" id = "nav-menu">
+                <li class="nav__item">
+                    <a href="/index.html" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/Front-end base/template/projects.html" class="nav__link">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/Front-end base/template/skills.html" class="nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#Contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN  - sign-up SECTION-->
+    <div class="sign-up__section">
+        <div class="sign-up__buffer">
+            <div class="sign-up__container">
+                <h1>Sign up</h1>
+
+                <form action="#" method ="GET" class="sign-up__holder">
+                    <input  type="text" id = "username" placeholder="Username" name ="user" required >
+                    <input type="password" id = "password" placeholder="Password" name ="password " required >
+                    <input type="password" id = "re-password" placeholder="Confirm Password" name ="password " required >
+                    <input  type="email" id = "email" placeholder="Email address" name ="email" required >
+    
+                    <!-- <div class="imput__email">
+                    
+                    </div>
+                    <div class="input__password">
+        
+                    </div> -->
+                    <div class="sign-up__last-section">
+                        <button class="custom__button" typ=""submit>Sign Up</button>
+                        <!-- <div class="custom__button" type="submit" >Sign In</div> -->
+                        <ul class="sign-up__pre">
+                            <li class="sign-up__pre__item">
+                                <span>Have an account?</span>
+                            </li>
+                            <li class="sign-up__pre__item">
+                                <a href="/Front-end base/template/log_in.html" target ="_blank">Sign in</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- <button type="submit">Sign In</button>  -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Front-end base/js/sign_up.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Front-end base/css/admin.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+    <title>Pham Tien Thinh's Portfolio</title>
+</head>
+<body>
+    <!-- HEADER - navbar--> 
+    <header class="header" id="header">
+        <nav class="nav__container">
+            <div class="nav__access" id="nav-access">
+                <i class="ri-menu-line" id ="nav-toggle" ></i>
+                <ul class="nav__user">
+                    <li class="nav__item" id="login">
+                        <a href="/Front-end base/template/log_in.html" class="nav__link">Login</a>
+                    </li>
+                    <li class="nav__item" id="sign-up">
+                        <div id="sign-up__button">
+                            <a href="/Front-end base/template/sign_up.html" class="nav__link" >Sign-up</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav__menu show__menu" id = "nav-menu">
+                <li class="nav__item">
+                    <a href="/index.html" class="nav__link">Home</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="/Front-end base/template/projects.html" class="nav__link">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/Front-end base/template/skills.html" class="nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="admin" id="admin">
+        <!-- Nav panel  -->
+        <div class="nav__panel">
+            <ul class="nav__panel__holder">
+                <!-- Ấn vào là sẽ fetch + load phần Form control -->
+                <li class="nav__panel__item" >
+                    <div id="introNav">Intro</div> 
+                </li>
+                <li class="nav__panel__item" >
+                    <div id="aboutNav">About</div>
+                </li>
+                <li class="nav__panel__item" >
+                    <div id="projectNav">Project</div>
+                </li>
+                <li class="nav__panel__item" >
+                    <div id="skillNav">Skill</div>
+                </li>
+                <li class="nav__panel__item" >
+                    <div id="userNav">User</div>
+                </li>
+            </ul>
+        </div>          
+        <!-- Data Section -->
+        <div class="form__control">
+            <div class="sub__nav">
+                <!-- Sub nav bar -->
+                <ul class="sub__nav__holder">
+                    <!-- JS gen by id in Nav panel -->
+                    <!-- <li class="sub__nav__item">
+                        <div>Intro</div></li>
+                    <li class="sub__nav__item">
+                        <div>Intro Place</div></li>
+                    <li class="sub__nav__item">
+                        <div>Intro Type</div></li>
+                    <li class="sub__nav__item">
+                        <div>Intro Topic</div></li> -->
+                </ul>
+            </div> 
+            
+                     
+            <div class="control__view">
+                <div class="guide"><p>
+                    Click an option on the <b>left</b> to continue
+                </p></div>
+                <div class="data__view">
+                    <!-- Form -->
+                    <!-- Gen ra với mỗi row thì đính kèm thêm button
+                        Event Listener là update thông tin xong reload lại -->
+                    <!-- Update and Delete button -->
+                    <!-- <button type="button" class="update__button" id="button">Update</button>
+                    <button type="button" class="delete__button" id="button">Delete</button> -->
+                </div>
+                <div class="add">
+                    <!-- Add button -->
+                    <!-- <button type="button" class="add__button" id="button">Add</button> -->
+                </div>
+            </div>
+        </div>
+            
+    </section>
+
+    <section class="footer" id="contact">
+        <div class="footer__holder">
+            <div class="footer__content">
+                <div class="about__me">
+                    <h3>Thinh Pham</h3>
+                    <div><span class="footer__text">thinh@gmail.com</span></div>
+                </div>
+                <div class="get__in__touch">
+                    <h3>Get in Touch</h3>
+                    <div>
+                        <span class="footer__text">Don't miss any updates of our new templates and extensions.!</span>
+                    </div>
+                    <form action="/" method="POST">
+                        <input type="email" name="email" id="email" placeholder=" Email">
+                        <button type="submit">Subcribe</button>
+        
+                    </form>
+                </div>
+                <div class="guide__lines">
+                    <h3>Our Guidelines</h3>
+                    <ul>
+                        <li class="guide__item"><a href="" class="footer__text">Terms</a></li>
+                        <li class="guide__item"><a href="" class="footer__text">Privacy Policy</a></li>
+                        <li class="guide__item"><a href="" class="footer__text">Cookie Policy</a></li>
+                        <li class="guide__item"><a href="" class="footer__text">Discover</a></li>
+                    </ul>
+                </div>
+                <div class="address">
+                    <h3>Our address</h3>
+                    <span class="footer__text">Chuong Duong, Hoan Kiem, Ha Noi</span>
+                    <ul>
+                        <li><i class="ri-facebook-line"></i></li>
+                        <li><i class="ri-twitter-line"></i></li>
+                        <li><i class="ri-instagram-line"></i></li>
+                        <li><i class="ri-linkedin-line"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__last-section">
+                <div class="copy__right">
+                    <span class="footer__text">Copyright <i class="ri-copyright-line"></i> 2023<b> Thinh Pham.</b> All rights reserved.</span>
+                    <span class="footer__text">Thank you for visiting my website</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- JS -->
+    <script src="/Front-end base/js/admin.js"></script>
+</body>
+</html>

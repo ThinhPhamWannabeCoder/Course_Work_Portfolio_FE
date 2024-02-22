@@ -1,0 +1,46 @@
+/* VARIABLES */
+
+
+/* BASE */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:  border-box;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+:root{
+    --header-height: 4rem;
+    --body-color: #202124;
+    --z-fixed: 100;
+    --text-color: #FFFFFF;
+
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+}
+body{
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* @media screen and (min-width:1150px){
+    :root{
+        --biggest-font-size: 4.5rem;
+        --h1-font-size: 3rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size:.813rem;
+    }
+} */
+
+/* HEADER - NAVBAR */
